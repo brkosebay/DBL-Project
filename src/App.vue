@@ -2,8 +2,8 @@
 <!-- Stuff we want on all of the pages will be here -->
   <div id="nav">
     <router-link to="/">Home</router-link> |
-    <router-link to="{name: 'About'}">About</router-link>
-    <router-link to="{name: 'fileUpload'}">File Upload</router-link>
+    <router-link to="/about">About</router-link> |
+    <router-link to="/fileupload">File Upload</router-link> |
   </div>
   <router-view/>
 </template>
