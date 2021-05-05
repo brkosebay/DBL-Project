@@ -12,6 +12,8 @@ firebase.initializeApp({
     appId: "1:435554159758:web:3e80462ea953f89e3c4ddf",
     measurementId: "G-15WM1WGL95"
 });
-firebase.firestore()
+const db = firebase.firestore()
+
+export {db}
 
 createApp(App).use(router).use(router).mount('#app')
