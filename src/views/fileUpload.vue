@@ -3,7 +3,7 @@
     <h1>File Upload Page</h1>
     <input type="text" placeholder="Name of the Dataset" v-model=datasets.dataName class="form-control">
     <p id="msg"></p><br><br>
-    <input type="file" @change="selectFile"><button @click="uploadFile">Upload</button><br><br>
+    <input type="file" accept=".csv" @change="selectFile"><button @click="uploadFile">Upload</button><br><br>
     <ul id="list"> </ul>
   </div><br><br>
   <div id="vis"></div>
@@ -27,13 +27,13 @@ export default {
       }
   },
   mounted() {
-    this.getAllDatabaseEntries();
+    this.getAllDatabaseEntries(); //the mounted() lifecycle executes after all components of the page have finished loading, so after the page is ready
+                                  // the previous uploaded datasets are visible in the page.
   },
   methods: {
       selectFile(event) {
-          console.log(event)
-          this.selectedFile = event.target.files[0]
-          console.log(this.selectedFile.name)
+          this.selectedFile = event.target.files[0] //Selects the uploaded file and assigns it to the "selectedFile" variable.
+          //TODO: Add proper checks to ensure that the files given are csv files.
       },
       uploadFile() {
           let fileName = `${this.selectedFile.name}`;
